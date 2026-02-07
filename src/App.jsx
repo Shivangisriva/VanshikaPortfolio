@@ -776,9 +776,10 @@ const certifications = [
         <Sparkles size={14} />
         Certifications
       </p>
-      <h2 className="text-6xl md:text-5xl font-black tracking-tighter text-white">
-        ACHIEVEMENTS & CERTIFICATIONS
-      </h2>
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white break-words">
+  ACHIEVEMENTS & CERTIFICATIONS
+</h2>
+
     </motion.div>
 
     {/* Certification Cards */}
