@@ -527,7 +527,7 @@ const certifications = [
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-12">
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-12">
             {projects.map((project, index) => {
               const CardContent = () => {
 
@@ -786,7 +786,7 @@ const certifications = [
       {certifications.map((cert, index) => (
         <motion.div
           key={index}
-          className="project-card group bg-white/5 border-2 border-white/10 p-4 rounded-lg"
+className="project-card group bg-white/5 border-2 border-white/10 p-4 sm:p-5 md:p-6 rounded-lg"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -794,7 +794,7 @@ const certifications = [
           whileHover={{ y: -8 }}
         >
           {/* Image */}
-          <div className="relative overflow-hidden rounded-lg mb-6 aspect-[3/2]">
+<div className="relative overflow-hidden rounded-lg mb-4 sm:mb-6 aspect-[4/3] sm:aspect-[3/2]">
             <img
               src={cert.image}
               alt={cert.title}
@@ -809,11 +809,11 @@ const certifications = [
               {cert.issuer} • {cert.year}
             </p>
 
-            <h3 className="text-xl md:text-2xl font-black text-white">
+<h3 className="text-lg sm:text-xl md:text-2xl font-black text-white">
               {cert.title}
             </h3>
 
-            <p className="text-gray-300 leading-relaxed font-medium">
+<p className="text-sm sm:text-base text-gray-300 leading-relaxed font-medium">
               {cert.description}
             </p>
           </div>
