@@ -904,7 +904,12 @@ className="project-card group bg-white/5 border-2 border-white/10 p-4 sm:p-5 md:
 
           {/* CTA Button */}
           <motion.button
-            className="inline-flex items-center gap-3 px-16 py-6 bg-white text-black text-xl font-black uppercase tracking-wider glow-effect"
+className="inline-flex items-center gap-2 sm:gap-3 
+px-8 sm:px-12 md:px-16 
+py-4 sm:py-5 md:py-6 
+bg-white text-black 
+text-base sm:text-lg md:text-xl 
+font-black uppercase tracking-wider glow-effect"
             whileHover={{ 
               scale: 1.1,
               boxShadow: '0 0 60px rgba(255,255,255,0.3)'
