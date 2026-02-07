@@ -19,7 +19,7 @@ export default function App() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
       
-      const sections = ['home', 'work', 'about', 'contact'];
+const sections = ['home', 'work', 'certifications', 'about', 'contact'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -47,6 +47,41 @@ export default function App() {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     setMenuOpen(false);
   };
+const certifications = [
+  {
+    title: "Java Programming Masterclass",
+    issuer: "Udemy · Abdul Bari",
+    description:
+      "Completed an in-depth Java course with hands-on projects covering Java fundamentals, OOP concepts, multithreading, collections, and practical implementations.",
+    year: "2024",
+    image: "/udemy.png", // add image later
+  },
+  {
+    title: "Database Programming with SQL",
+    issuer: "Oracle",
+    description:
+      "Gained practical knowledge of SQL queries, data manipulation, joins, subqueries, constraints, and database design fundamentals using Oracle Database.",
+    year: "2024",
+    image: "/oracle.png",
+  },
+  {
+    title: "SQL (Basic)",
+    issuer: "HackerRank",
+    description:
+      "Validated ability to write efficient SQL queries using joins, aggregates, and subqueries for structured data retrieval.",
+    year: "2024",
+    image: "/hacker.avif",
+  },
+  {
+    title: "AWS Certified Cloud Practitioner",
+    issuer: "Amazon Web Services (AWS)",
+    description:
+      "Demonstrated foundational understanding of cloud concepts, AWS services, security, pricing models, and cloud architecture best practices.",
+    year: "2024",
+    image: "/aws.jpg",
+  },
+];
+
 
   const projects = [
     {
@@ -65,7 +100,7 @@ export default function App() {
   image: "/ride.jpg" // replace with your image path
 },
 {
-  title: "Samarth",
+  title: "Samadhan",
   category: "AI, ML & Web Development",
   description:
     "Samarth is an intelligent public complaint management platform that categorizes, prioritizes, and resolves of civic issues like water supply, electricity, and sanitation using AI-driven insights.",
@@ -236,12 +271,12 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 py-6">
           <div className="flex items-center justify-between">
             <div className="text-2xl font-black tracking-tight cursor-pointer text-white" onClick={() => scrollToSection('home')}>
-              Vanshika's Vault
+              Portfolio.
             </div>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-12">
-              {['Home', 'Work', 'About', 'Contact'].map((item) => (
+              {['Home', 'Work','Certifications', 'About', 'Contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
@@ -364,7 +399,7 @@ export default function App() {
             >
               <p className="text-sm uppercase tracking-widest text-gray-400 mb-6 flex items-center gap-2">
                 <Sparkles size={16} className="animate-pulse" />
-                Creative Developer & Designer
+                I'm Vanshika, a frontend developer and designer.
               </p>
             </motion.div>
             
@@ -377,7 +412,7 @@ export default function App() {
               <motion.span
                 className="inline-block"
                 whileHover={{ scale: 1.05, rotateZ: -2 }}
-                transition={{ type: "spring", stiffness: 300 }}
+                transition={{ type: "spring", stiffness: 250 }}
               >
                 CRAFTING
               </motion.span>
@@ -663,7 +698,7 @@ export default function App() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <p className="text-2xl text-gray-200 leading-relaxed font-semibold">
-                I'm a <span className="text-white font-bold">frontend developer</span> and <span className="text-white font-bold">designer</span> with a passion for creating thoughtful digital experiences.
+                I'm a Vanshika Gupta a <span className="text-white font-bold">frontend developer</span> and <span className="text-white font-bold">designer</span> with a passion for creating thoughtful digital experiences.
               </p>
               <p className="text-xl text-gray-300 leading-relaxed font-medium">
                 With 1+ years of experience, I've worked with organizations and established myself as a confident bieng who bring their visions to life through <span className="font-bold text-white">clean code</span> and <span className="font-bold text-white">intentional design</span>.
@@ -723,6 +758,70 @@ export default function App() {
           </div>
         </div>
       </section>
+
+
+{/* Certifications Section */}
+<section id="certifications" className="py-32 px-6 relative">
+  <div className="max-w-7xl mx-auto">
+    
+    {/* Section Heading */}
+    <motion.div
+      className="mb-20"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+    >
+      <p className="text-sm uppercase tracking-widest text-gray-300 mb-4 flex items-center gap-2 font-bold">
+        <Sparkles size={14} />
+        Certifications
+      </p>
+      <h2 className="text-6xl md:text-5xl font-black tracking-tighter text-white">
+        ACHIEVEMENTS & CERTIFICATIONS
+      </h2>
+    </motion.div>
+
+    {/* Certification Cards */}
+    <div className="grid md:grid-cols-2 gap-12">
+      {certifications.map((cert, index) => (
+        <motion.div
+          key={index}
+          className="project-card group bg-white/5 border-2 border-white/10 p-4 rounded-lg"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: index * 0.15 }}
+          whileHover={{ y: -8 }}
+        >
+          {/* Image */}
+          <div className="relative overflow-hidden rounded-lg mb-6 aspect-[3/2]">
+            <img
+              src={cert.image}
+              alt={cert.title}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+          </div>
+
+          {/* Content */}
+          <div className="space-y-4">
+            <p className="text-sm uppercase tracking-wider text-gray-400 font-semibold">
+              {cert.issuer} • {cert.year}
+            </p>
+
+            <h3 className="text-xl md:text-2xl font-black text-white">
+              {cert.title}
+            </h3>
+
+            <p className="text-gray-300 leading-relaxed font-medium">
+              {cert.description}
+            </p>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Contact Section */}
       <section id="contact" className="py-20 px-6 relative overflow-hidden">
